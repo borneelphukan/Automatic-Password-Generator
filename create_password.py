@@ -36,7 +36,7 @@ def create_password_btn():
             app_window.display.setText("Select password length !!")
     else:
         if app_window.numbers.isChecked() and app_window.special_characters.isChecked():
-            choice = 1;
+            choice = 1
         elif app_window.numbers.isChecked() and app_window.special_characters.isChecked()==False:
             choice = 2
         elif app_window.numbers.isChecked() == False and app_window.special_characters.isChecked():
