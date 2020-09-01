@@ -1,11 +1,15 @@
+# Import Libraries and Classes
 import random
 from app_window import app_window
 
-ALPHABETS = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
-NUM = ['1', '2', '3', '4', '5', '6', '7', '8', '9']
-SYMBOLS = ['!', '@', '#', '$', '%', '^', '&', '*']
+# List of Characters to be Used
+ALPHABETS = [chr(x) for x in range(ord('a'), ord('z') + 1)]    # List of Aplhabets from a -> z
+NUM = [str(i) for i in range(1, 10)]                           # List of Numbers from 1 -> 9
+SYMBOLS = ['!', '@', '#', '$', '%', '^', '&', '*']             # List of Symbols
 
+# Create Password Method
 def create_password(choice, text):
+
     password = []
     if choice == 1:
         length = ALPHABETS + NUM + SYMBOLS
@@ -31,9 +35,11 @@ def create_password(choice, text):
     password = str(''.join(password))
     return password
 
+# Create Password Button
 def create_password_btn():
-    if app_window.length.text() == "Select length of Password":
-            app_window.display.setText("Select password length !!")
+
+    if app_window.length.text() == "Select Length of Password":
+            app_window.display.setText("Select Password Length !!")
     else:
         if app_window.numbers.isChecked() and app_window.special_characters.isChecked():
             choice = 1
@@ -44,6 +50,6 @@ def create_password_btn():
         elif app_window.numbers.isChecked() == False and app_window.special_characters.isChecked() == False:
             choice = 4
         
-        text = int(app_window.length.selectedItem())
-        create = create_password(choice, text)
-        app_window.display.setText(create)
+    text = int(app_window.length.selectedItem())
+    create = create_password(choice, text)
+    app_window.display.setText(create)

@@ -1,15 +1,22 @@
+# Import Libraries and Classes
 from PyQt5.QtWidgets import *
-from PyQtGui import *
+from PyQt5.QtGui import *
 from PyQt5 import *
 from PyQt5.QtCore import *
 from create_password import create_password_btn, create_button_btn
 
+# Class App Window
 class app_window():
-    def __init__(self):
-        super().__init__()
-        self.create_gui()
 
-    def create_gui(QtWidgets.QWidget):
+    # Deafult Constructor
+    def __init__(self):
+
+        super().__init__()                          # Super Method
+        self.create_gui()
+    
+    # Create GUI Method
+    def create_gui(self):
+
         self.setWindowTitle("Password Generator")
         self.setGeometry(540, 150, 400, 300)
         self.setFixedSize(400, 500)
@@ -53,3 +60,4 @@ class app_window():
         self.special_characters.move(110,309)
         
         self.show()
+    
