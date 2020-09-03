@@ -11,4 +11,4 @@ Often times, while creating an account in any website irrespective of any domain
 
 ### Todos
 1. Create an executable file for easier execution
-2. Generate password with greater.
+2. Generate passwords with greater impenetrability.
